@@ -5,6 +5,9 @@ import Divider from './Divider';
 
 const Product = () => {
 	const { product } = config;
+	if (!product) {
+		return null;
+	}
 	const items: [ProductItem[]] = [[]]
 	for (let i = 0; i < product.items.length; i += 2) {
 		const subItems = [product.items[i]];

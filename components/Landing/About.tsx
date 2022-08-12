@@ -3,6 +3,9 @@ import config from './config';
 
 const About = () => {
 	const { company, about } = config;
+	if (!about) {
+		return null;
+	}
 	const { logo, name: companyName } = company;
 	const { socialMedia, sections } = about;
 

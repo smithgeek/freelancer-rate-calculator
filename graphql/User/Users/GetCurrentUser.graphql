@@ -1,7 +1,0 @@
-query User_GetCurrentUser{	
-  users{
-    id
-    name
-    email
-  }
-}

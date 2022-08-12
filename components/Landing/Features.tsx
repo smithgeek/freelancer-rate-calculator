@@ -3,6 +3,9 @@ import config from './config';
 
 const Features = () => {
 	const { features } = config;
+	if (!features) {
+		return null;
+	}
 	const { title, subtitle, description, items: featuresList } = features;
 	return (
 		<div className={`py-12 bg-background`} id="features">

@@ -17,7 +17,7 @@ const MainHero = () => {
 					{mainHero.description}
 				</p>
 				<div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-					<div className="rounded-md shadow">
+					{mainHero.primaryAction && <div className="rounded-md shadow">
 						<Link href={mainHero.primaryAction.href}>
 							<a
 								href={mainHero.primaryAction.href}
@@ -26,7 +26,7 @@ const MainHero = () => {
 								{mainHero.primaryAction.text}
 							</a>
 						</Link>
-					</div>
+					</div>}
 					{mainHero.secondaryAction && <div className="mt-3 sm:mt-0 sm:ml-3">
 						<a
 							href={mainHero.secondaryAction.href}

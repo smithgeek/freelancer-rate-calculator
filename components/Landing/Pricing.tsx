@@ -3,6 +3,9 @@ import config from './config';
 
 const Pricing = () => {
 	const { pricing } = config;
+	if (!pricing) {
+		return null;
+	}
 	const { items, title } = pricing;
 	const [firstPlan, secondPlan, thirdPlan] = items;
 

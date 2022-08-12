@@ -4,7 +4,7 @@ import { CanvasContext } from './hooks/useCanvas';
 import useResponsiveSize from './hooks/useResponsiveSize';
 import Wave from './Wave';
 
-const Canvas: FC = () => {
+const AnimatedWaves: FC = () => {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
 	const { width } = useResponsiveSize();
 	const [context, setContext] = useState<
@@ -20,7 +20,7 @@ const Canvas: FC = () => {
 		<>
 			<div>
 				<CanvasContext.Provider value={{ context }}>
-					<canvas id="canvas" ref={canvasRef} width={width} height={220}></canvas>
+					<canvas id="canvas" ref={canvasRef} width={width - 20} height={220}></canvas>
 					<Wave />
 					<div style={{ height: 4, backgroundColor: 'rgb(36,99,235, 0.1)' }}></div>
 				</CanvasContext.Provider>
@@ -29,4 +29,4 @@ const Canvas: FC = () => {
 	);
 };
 
-export default Canvas;
+export default AnimatedWaves;

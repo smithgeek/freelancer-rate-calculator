@@ -4,13 +4,13 @@ import { ReactNode } from "react";
 
 export interface Config {
 	company: Company;
-	navigation: Navigation[];
-	callToAction: Action;
+	navigation?: Navigation[];
+	callToAction?: Action;
 	mainHero: MainHero;
-	product: Product;
-	features: Features;
-	pricing: Pricing;
-	about: About;
+	product?: Product;
+	features?: Features;
+	pricing?: Pricing;
+	about?: About;
 	app: App
 }
 
@@ -35,7 +35,7 @@ export interface Action {
 
 export interface Company {
 	name: string;
-	logo: string;
+	logo?: string;
 }
 
 export interface Features {
@@ -56,8 +56,8 @@ export interface MainHero {
 	title: string;
 	subtitle?: string;
 	description: string;
-	img: string;
-	primaryAction: Action;
+	img?: string | ReactNode;
+	primaryAction?: Action;
 	secondaryAction?: Action;
 }
 
@@ -106,95 +106,14 @@ const Config: Config = {
 		description: '',
 		locale: 'en',
 	},
-	callToAction: {
-		href: "/dashboard",
-		text: "Sign In"
-	},
 	company: {
-		name: process.env.NEXT_PUBLIC_APP_NAME,
-		logo: "https://source.unsplash.com/random/100x100/?space"
+		name: process.env.NEXT_PUBLIC_APP_NAME
 	},
-	navigation: [
-		{
-			name: "Features",
-			href: "#features"
-		},
-		{
-			name: "Pricing",
-			href: "#pricing"
-		}
-	],
 	mainHero: {
-		title: "Your Product",
-		subtitle: "on display",
-		description: "In minutes you can have your own site.",
-		img: "https://source.unsplash.com/random/600x600/?space",
-		primaryAction: {
-			"text": "Get Started",
-			"href": "/dashboard"
-		}
+		title: "Freelancer Rate",
+		subtitle: "Calculator",
+		description: "Charge what you're worth.",
 	},
-	product: {
-		title: process.env.NEXT_PUBLIC_APP_NAME,
-		items: [
-			{
-				title: "No need for waisting your time",
-				description: "Using a starter project gets you what you need faster.",
-				img: "https://source.unsplash.com/random/500x500/?space"
-			}
-		]
-	},
-	features: {
-		title: "Features",
-		subtitle: "",
-		description: "",
-		items: [
-			{
-				name: "Awesome features",
-				description: "Make people want your service",
-				iconNode: <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className="h-12 text-accent" viewBox="0 0 24 24"><path fill="currentColor" d="M4 21V9l8-6l8 6v12h-6v-7h-4v7Z"></path></svg>
-
-			}
-		]
-	},
-	pricing: {
-		title: "Pricing",
-		items: [
-			{
-				name: "Commercial",
-				price: "$25",
-				priceDetails: "/ month",
-				features: [
-					"This is for you",
-					"If you want to save time",
-					"Get it now!"
-				],
-				key: "business"
-			},
-			{
-				name: "Home Bar",
-				price: "$10",
-				priceDetails: "/ year",
-				features: [
-					"This is for you",
-					"If you want to save time",
-					"Get it now!"
-				],
-				key: "hobby"
-			},
-			{
-				name: "Custom",
-				price: "Contact",
-				priceDetails: "",
-				features: [
-					"Let us know what you're looking for"
-				],
-				key: "custom"
-			}
-		]
-	},
-	about: {
-	}
 }
 
 export default Config;

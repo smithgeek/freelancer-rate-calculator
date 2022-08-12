@@ -17,12 +17,12 @@ const Menu = () => {
 						<div className="flex items-center justify-between w-full md:w-auto">
 							<a href="#">
 								<span className="sr-only">{companyName}</span>
-								<img alt="logo" className="h-8 w-auto sm:h-8" src={logo} />
+								{logo && <img alt="logo" className="h-8 w-auto sm:h-8" src={logo} />}
 							</a>
 						</div>
 					</div>
 					<div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
-						{navigation.map((item) => (
+						{navigation && navigation.map((item) => (
 							<Link
 								key={item.name}
 								href={item.href}
@@ -31,7 +31,7 @@ const Menu = () => {
 								{item.name}
 							</Link>
 						))}
-						<Link
+						{callToAction && <Link
 							href={callToAction.href}
 						>
 							<a
@@ -40,7 +40,7 @@ const Menu = () => {
 							>
 								{callToAction.text}
 							</a>
-						</Link>
+						</Link>}
 
 					</div>
 				</nav>
