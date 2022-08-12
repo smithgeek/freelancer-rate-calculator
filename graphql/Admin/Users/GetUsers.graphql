@@ -1,0 +1,10 @@
+query Admin_GetUsers{
+  users{
+    id
+    name
+    email
+    subscription{
+      status
+    }
+  }
+}

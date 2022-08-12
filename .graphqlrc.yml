@@ -1,0 +1,13 @@
+projects:
+  user:
+    schema: graphql/User/schema.json
+    documents: graphql/User/**/*.graphql
+    extensions:
+      languageService:
+        useSchemaFileDefinitions: true
+  admin:
+    schema: graphql/Admin/schema.json
+    documents: graphql/Admin/**/*.graphql
+    extensions:
+      languageService:
+        useSchemaFileDefinitions: true

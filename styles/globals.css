@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.ReactModal__Content {
+	
+	border-color: #2a303c;
+	border-width: 1px;
+}
+
+.modal-overlay {
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 999;
+	background-color: hsl(var(--nf, var(--n)) / var(--tw-bg-opacity));
+	--tw-bg-opacity: 0.4;
+	transition-duration: 200ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-property: transform, opacity;
+}
